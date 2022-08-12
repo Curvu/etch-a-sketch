@@ -5,16 +5,39 @@
 
 body {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
-.container {
+
+/* Grid */
+.grid {
     display: grid;
     height: 500px;
     width: 500px;
+    border: 2px solid #2a9d8f;
 }
 
 .grid-element {
-    border: 1px solid slateblue;
+    user-select: none;
+}
+
+.show-line {
+    border: 1px solid #e9c46a;
+}
+
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn {
+    padding: 4px;
+    border-radius: 8px;
+    border: 2px solid #0D181C;
+    background-color: #264653;
+    color: white;
 }
