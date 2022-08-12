@@ -1,13 +1,22 @@
 const grid = document.querySelector('.grid');
 let SIZE = 16;
 
+// Shows the line of each square
 const lines = document.getElementById('lines');
 lines.addEventListener('click', () => {
     for (let i = 0; i < (SIZE*SIZE); i++) {
-        grid.children[i].classList.toggle('show-line')
+        grid.children[i].classList.toggle('show-line');
     }
-})
+});
 
+// Function that reset the board
+const reset = document.getElementById('reset');
+reset.addEventListener('click', () => {
+    grid.innerHTML = '';
+    createGrid(SIZE);
+});
+
+// Check if mouse is Up or Down
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
