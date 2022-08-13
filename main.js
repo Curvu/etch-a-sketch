@@ -1,6 +1,8 @@
 const grid = document.querySelector('.grid');
 let SIZE = 16;
 
+let color = 'black';
+
 // Shows the line of each square
 const lines = document.getElementById('lines');
 lines.addEventListener('click', () => {
@@ -24,7 +26,8 @@ document.body.onmouseup = () => (mouseDown = false);
 // Paint the square
 function paint(e) {
     if (e.type === 'mouseover' && !mouseDown) return;
-    e.target.style.backgroundColor = 'black';
+    if (rainbowToggler) rainbow();
+    e.target.style.backgroundColor = color;
 };
 
 // Create the board
@@ -50,6 +53,21 @@ slider.addEventListener('input', (e) => {
     grid.innerHTML = '';
     createGrid(SIZE);
 });
+
+// Paint rainbow
+const rainbowBtn = document.getElementById('rainbow');
+
+let rainbowToggler = false;
+rainbowBtn.addEventListener('click', () => {
+    rainbowToggler = !rainbowToggler;
+});
+
+function rainbow() {
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+    color = `rgb(${r}, ${g}, ${b})`;
+};
 
 // After load
 window.onload = () => {
