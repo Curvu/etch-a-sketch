@@ -60,6 +60,8 @@ const rainbowBtn = document.getElementById('rainbow');
 let rainbowToggler = false;
 rainbowBtn.addEventListener('click', () => {
     rainbowToggler = !rainbowToggler;
+    rainbowBtn.classList.toggle('active');
+    console.log(rainbowBtn.classList)
 });
 
 function rainbow() {
@@ -67,7 +69,23 @@ function rainbow() {
     let g = Math.floor(Math.random() * 255);
     let b = Math.floor(Math.random() * 255);
     color = `rgb(${r}, ${g}, ${b})`;
+    colorInput.value = rgbToHex(r, g, b);
 };
+
+// Color input
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+};
+
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+};
+
+const colorInput = document.getElementById('color-input');
+colorInput.addEventListener('input', (e) => {
+    color = colorInput.value;
+});
 
 // After load
 window.onload = () => {
