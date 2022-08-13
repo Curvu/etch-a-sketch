@@ -33,6 +33,7 @@ body {
     flex-direction: column;
     height: 500px;
     justify-content: space-around;
+    align-items: center;
 }
 
 .btn {
@@ -42,7 +43,9 @@ body {
     background-color: #264653;
     color: white;
     font-size: 24px;
+    width: 100%;
 }
+
 
 /* Slider */
 .slider-container {
@@ -76,4 +79,31 @@ body {
     background: #2a9d8f;
     cursor: pointer;
     border-radius: 100%;
+}
+
+/* Rainbow btn */
+.rainbowBtn {
+    background-color: #ff858d;
+}
+
+.active {
+    background-color: #afc97e;
+}
+
+/* Color Input */
+input[type="color"] {
+    padding: 0;
+    width: 150%;
+    height: 150%;
+    margin: -25%;
+}
+
+.colors {
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    /* optional formatting below here */
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px 0px grey;
+    margin: 1em;
 }
