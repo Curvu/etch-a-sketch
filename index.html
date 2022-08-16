@@ -2,21 +2,33 @@
     <head>
         <title>Etch a Sketch</title>
         <link rel="stylesheet" href="./style.css">
+
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <div class="colors">
-                <input id="color-input" type="color">
+        <header>
+            <h1>
+                Paint me something!
+            </h1>
+        </header>
+        <main>
+            <div class="container">
+                <div class="colors">
+                    <input id="color-input" type="color">
+                </div>
+                <button id="rainbow" class="btn rainbowBtn">Rainbow</button>
+                <button id="lines" class="btn linesBtn active">Grid Lines</button>
+                <button id="reset" class="btn">Reset</button>
+                <div class="slider-container">
+                    <input class="slider" type="range" min="1" max="100" value="16">
+                    <span id="slider-val">16</span>
+                </div>
             </div>
-            <button id="rainbow" class="btn rainbowBtn">Rainbow</button>
-            <button id="lines" class="btn">Grid Lines</button>
-            <button id="reset" class="btn">Reset</button>
-            <div class="slider-container">
-                <input class="slider" type="range" min="1" max="100" value="16">
-                <span id="slider-val">16</span>
-            </div>
-        </div>
-        <div class="grid"></div>
+            <div class="grid"></div>
+        </main>
     </body>
     <script src="./main.js"></script>
 </html>
